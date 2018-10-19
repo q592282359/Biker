@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/tab_mine"
+        android:enabled="true"
+        android:icon="@mipmap/bottom_my"
+        android:title="我的"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/tab_sport"
+        android:enabled="true"
+        android:icon="@mipmap/bottom_sport"
+        android:title="运动"
+        app:showAsAction="ifRoom" />
+
+
+
+    <item
+        android:id="@+id/tab_find"
+        android:enabled="true"
+        android:icon="@mipmap/bottom_find"
+        android:title="发现"
+        app:showAsAction="ifRoom" />
+
+</menu>

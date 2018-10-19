@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Biker</string>
+    <string name="splash_text1">骑行，在路上</string>
+    <string name="splash_text2">用车轮丈量我们的青春之路</string>
+    <string name="mine_login">点击登录\n登录后体验更多功能</string>
+</resources>
