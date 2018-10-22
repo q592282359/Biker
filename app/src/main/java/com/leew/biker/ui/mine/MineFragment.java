@@ -13,21 +13,17 @@ import com.leew.biker.base.BaseFragment;
 import com.leew.biker.bean.UserInfo;
 import com.leew.biker.global.MyApplication;
 import com.leew.biker.ui.login.LoginActivity;
-import com.leew.biker.util.ToastUtils;
+import com.leew.biker.view.CircleImageView;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
+
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
-import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.datatype.BmobFile;
-import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.UpdateListener;
-import de.hdodenhof.circleimageview.CircleImageView;
+
+
 
 
 /**

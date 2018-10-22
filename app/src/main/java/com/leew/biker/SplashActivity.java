@@ -1,11 +1,8 @@
 package com.leew.biker;
 
-import android.Manifest;
+
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.util.Log;
+
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.LinearLayout;
@@ -51,7 +48,7 @@ public class SplashActivity extends BaseActivity {
                         @Override
                         public void done(UserInfo userInfo, BmobException e) {
                             if (e == null) {
-                                LogUtils.e(userInfo.getName());
+
                                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
                                 finish();
                             } else {

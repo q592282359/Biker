@@ -3,8 +3,7 @@ package com.leew.biker.ui.register;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.os.Bundle;
-import android.support.annotation.RequiresApi;
+
 import android.text.Editable;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,10 +16,12 @@ import com.leew.biker.util.LogUtils;
 import com.leew.biker.util.StringUtils;
 import com.leew.biker.util.ToastUtils;
 import com.leew.biker.view.TimeButton;
-import com.xw.repo.XEditText;
+import com.leew.biker.view.XEditText;
+
 
 import org.greenrobot.eventbus.EventBus;
 
+import androidx.annotation.RequiresApi;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.bmob.v3.BmobUser;

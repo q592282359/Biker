@@ -5,25 +5,27 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.text.Editable;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.leew.biker.MainActivity;
+
 import com.leew.biker.R;
 import com.leew.biker.base.BaseActivity;
 import com.leew.biker.base.PageManager;
 import com.leew.biker.bean.UserInfo;
 import com.leew.biker.ui.register.RegisterActivity;
 import com.leew.biker.util.LogUtils;
-import com.xw.repo.XEditText;
+import com.leew.biker.view.XEditText;
+
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import androidx.annotation.RequiresApi;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.bmob.v3.BmobUser;
@@ -142,13 +144,13 @@ public class LoginActivity extends BaseActivity {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
     }
-
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void getmsg(LoginEvent event) {
         mEtUsername.setText(event.getUsername());
         mEtPassWord.setText(event.getPassword());
 
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

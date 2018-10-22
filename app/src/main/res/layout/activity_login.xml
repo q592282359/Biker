@@ -28,7 +28,7 @@
             android:src="@mipmap/splash_bike" />
 
 
-        <com.xw.repo.XEditText
+        <com.leew.biker.view.XEditText
             android:id="@+id/et_username"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -54,7 +54,7 @@
             android:layout_marginRight="30dp"
             android:background="#cccccc" />
 
-        <com.xw.repo.XEditText
+        <com.leew.biker.view.XEditText
             android:id="@+id/et_passWord"
             android:layout_width="match_parent"
             android:layout_height="40dp"

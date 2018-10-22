@@ -4,20 +4,15 @@ package com.leew.biker.ui.mine;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -28,24 +23,22 @@ import com.bumptech.glide.Glide;
 import com.leew.biker.R;
 import com.leew.biker.base.BaseActivity;
 import com.leew.biker.bean.UserInfo;
+import com.leew.biker.global.MyApplication;
 import com.leew.biker.util.BitmapUtils;
 import com.leew.biker.util.LogUtils;
 import com.leew.biker.util.ToastUtils;
+import com.leew.biker.view.CircleImageView;
 
 import org.greenrobot.eventbus.EventBus;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.UpdateListener;
 import cn.bmob.v3.listener.UploadFileListener;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * author:Leew
@@ -91,7 +84,7 @@ public class PersonalActivity extends BaseActivity implements View.OnClickListen
     LinearLayout mParentLl;
     private PopupWindow ImgPopupWindow;
     private PopupWindow TextPopupWindow;
-    private int width,height;
+    private int width, height;
     private int[] heads = {R.mipmap.head1, R.mipmap.head2, R.mipmap.head3, R.mipmap.head4, R.mipmap.head5, R.mipmap.head6, R.mipmap.head7, R.mipmap.head8, R.mipmap.head9, R.mipmap.head10, R.mipmap.head11};
 
     @Override
@@ -117,17 +110,16 @@ public class PersonalActivity extends BaseActivity implements View.OnClickListen
         manager.getDefaultDisplay().getMetrics(outMetrics);
         width = outMetrics.widthPixels;
         height = outMetrics.heightPixels;
-
-
-
-        UserInfo userInfo = BmobUser.getCurrentUser(UserInfo.class);
-        mName.setText(userInfo.getName());
-        Glide.with(activity).load(userInfo.getHead().getFileUrl()).into(mHead);
-        mPlace.setText(userInfo.getPlace());
-        mSex.setText(userInfo.getSex());
-        mAge.setText(String.format("%d", userInfo.getAge()));
-        mHigh.setText(String.format("%d cm", userInfo.getHigh()));
-        mWeight.setText(String.format("%d kg", userInfo.getWeight()));
+        if (MyApplication.getInstance().mUser.IsLogin()) {
+            UserInfo userInfo = BmobUser.getCurrentUser(UserInfo.class);
+            mName.setText(userInfo.getName());
+            Glide.with(activity).load(userInfo.getHead().getFileUrl()).into(mHead);
+            mPlace.setText(userInfo.getPlace());
+            mSex.setText(userInfo.getSex());
+            mAge.setText(String.format("%d", userInfo.getAge()));
+            mHigh.setText(String.format("%d cm", userInfo.getHigh()));
+            mWeight.setText(String.format("%d kg", userInfo.getWeight()));
+        }
     }
 
     @Override
@@ -327,7 +319,7 @@ public class PersonalActivity extends BaseActivity implements View.OnClickListen
                 TextPopupWindow.dismiss();
             }
         });
-        TextPopupWindow = new PopupWindow(textview, width/5*4, height/6, true);
+        TextPopupWindow = new PopupWindow(textview, width / 5 * 4, height / 6, true);
         TextPopupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
         TextPopupWindow.setOutsideTouchable(true);
         TextPopupWindow.setTouchable(true);

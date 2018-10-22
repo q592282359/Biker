@@ -2,13 +2,10 @@ package com.leew.biker;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
+
 import android.widget.FrameLayout;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.leew.biker.base.BaseActivity;
 import com.leew.biker.ui.find.FindFragment;
 import com.leew.biker.ui.mine.MineFragment;
@@ -18,6 +15,10 @@ import com.leew.biker.view.BottomNavigationViewHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import butterknife.BindView;
 
 public class MainActivity extends BaseActivity {

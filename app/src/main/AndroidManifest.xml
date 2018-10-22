@@ -55,7 +55,9 @@
         <activity android:name=".ui.mine.PersonalActivity" />
         <activity android:name=".ui.mine.SettingActivity" />
         <activity android:name=".ui.sport.SportActivity" />
-
+        <activity android:name="com.amap.api.navi.AmapRouteActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
     </application>
 
 </manifest>

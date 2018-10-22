@@ -1,10 +1,11 @@
 package com.leew.biker.util;
 
 import android.content.Context;
-import android.support.annotation.StringRes;
 import android.widget.Toast;
 
 import com.leew.biker.global.MyApplication;
+
+import androidx.annotation.StringRes;
 
 
 /**

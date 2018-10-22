@@ -3,9 +3,7 @@ package com.leew.biker.view;
 import android.content.Context;
 import android.os.Handler;
 import android.util.AttributeSet;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
 import com.leew.biker.R;
@@ -13,13 +11,15 @@ import com.leew.biker.R;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import androidx.appcompat.widget.AppCompatTextView;
+
 /**
  * author:Leew
  * date:2018/10/17  16:52
  * vesion:1.0
  * description:
  */
-public class TimeButton extends android.support.v7.widget.AppCompatTextView {
+public class TimeButton extends AppCompatTextView {
 
     private boolean canSend = true;//默认可以发送 , 等计时结束时方可重新发送
 
